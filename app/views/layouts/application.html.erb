@@ -7,8 +7,49 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="Twerpper">Title</a>
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </div>
+</div>
 
+<header>
+    <div class="wrapper">
+      
+      <span>Twitter Clone</span>
+      
+      <% if current_user %>
+        <%= link_to "Log Out", logout_path %>
+
+      <% else %>
+      <%= form_tag sessions_path do %>
+        <%= text_field_tag :username, nil, placeholder: "username" %>
+          <%= password_field_tag :password, nil,  placeholder: "password" %>
+          <%= submit_tag "Log In" %>
+      <% end %>
+      <% end %>
+
+    </div>
+  </header>
+  <div id="content">
+    <div class="wrapper">
+      <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, class: "flash #{name}" %>
+      <% end %>
 <%= yield %>
+</div>
+</div>
+
+<footer>
+<div class="wrapper">
+  Twerpper - A Twitter Clone 
+</div>
+</footer>
 
 </body>
 </html>
