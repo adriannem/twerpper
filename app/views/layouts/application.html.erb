@@ -7,22 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="navbar">
-  <div class="navbar-inner">
-    <a class="brand" href="Twerpper">Title</a>
-    <ul class="nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Help</a></li>
-    </ul>
-  </div>
-</div>
-
 <header>
     <div class="wrapper">
-      
       <span>Twitter Clone</span>
-      
+
       <% if current_user %>
         <%= link_to "Log Out", logout_path %>
 
@@ -34,16 +22,33 @@
       <% end %>
       <% end %>
 
-    </div>
-  </header>
-  <div id="content">
+      </div>
+    </header>
+
+	<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Twerpper</a>
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="content">
     <div class="wrapper">
       <% flash.each do |name, msg| %>
           <%= content_tag :div, msg, class: "flash #{name}" %>
       <% end %>
-<%= yield %>
-</div>
-</div>
+      <%= yield %>
+    </div>
+  </div>
+
+
+      
+
+
 
 <footer>
 <div class="wrapper">
