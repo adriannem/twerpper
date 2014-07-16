@@ -1,0 +1,2 @@
+class TwerpsController < ApplicationController
+end
