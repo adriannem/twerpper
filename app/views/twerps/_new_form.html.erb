@@ -1,0 +1,8 @@
+<div class="panel right">
+	<h1> Create A Twerp </h1>
+	<%= form_for @twerp do |f| %>
+		<%= f.text_area :content, class: "twerpText", id: "twerpText" %>
+		<%= f.submit "Twerp!" %>
+		<span id="charCount">0</span>
+	<% end %>
+</div>

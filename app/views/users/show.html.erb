@@ -1,8 +1,14 @@
+<% if current_user %>
+	<%= render 'twerps/new_form' %>
+<% end %>
+
+
 <div id="twerps" class="panel left">
 	<h1> Your Twerpper Profile </h1>
 	<div class="twerpWrapper">
 		<img class="avatar" src="<%= @user.avatar_url %>"/>
 		<span class="name"><%= @user.name %></span> @<%= @user.username %>
+		
         <p>
         XX Twerps
         <span class="spacing">XX Followers</span>
