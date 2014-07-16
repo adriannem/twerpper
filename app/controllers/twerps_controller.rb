@@ -8,4 +8,6 @@ class TwerpsController < ApplicationController
 		flash[:error] = "Your Twerp was over 140 characters" unless twerp.save
 		redirect_to root_url
 
+	end
+
 end
